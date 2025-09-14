@@ -8,7 +8,7 @@ This folder contains materials for behavioral and AI-based experiments.
 
 ## How to Run oTree
 
-- Download otree_app.otreezip
+- Download otree_app.otreezip.
 
 ```bash
 pip3 install -U otree
