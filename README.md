@@ -33,7 +33,7 @@ for **COMSCI/ECON 206 – Problem Set 1** at Duke Kunshan University.
 
 - [NashPy](https://doi.org/10.21105/joss.03778) – Python library for computing equilibria in 2-player games.
 - [Game Theory Explorer](http://www.gametheoryexplorer.org/) – for extensive form modeling.
-- [oTree](https://doi.org/10.1016/j.jbef.2015.12.001) – for behavioral experiments.
+- [oTree](https://www.otreehub.com/) – for behavioral experiments.
 
 ## License
 
