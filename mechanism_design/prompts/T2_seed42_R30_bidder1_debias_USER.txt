@@ -1,0 +1,46 @@
+Auction: First-price sealed-bid, common-value, one-shot.
+Bidders: 4. Bid range: 0–200.
+Unknown true value V. Your private signal is s_i. Signals satisfy:
+s_i = V + ε_i, with ε_i ~ Normal(0, 20^2), i.i.d.
+
+Winner's-curse note: Winners tend to have the highest signals, so E[V | you win] < s_i.
+
+You are ONE bidder facing 30 independent auctions (cases 1..30).
+For each case k, you ONLY observe your own signal s_i(k) below.
+Treat cases independently.
+
+s_i list (one per line for k=1..30):
+72
+93
+132
+100
+52
+83
+79
+103
+91
+56
+110
+97
+118
+111
+114
+62
+124
+68
+130
+105
+105
+70
+146
+63
+94
+74
+127
+104
+99
+140
+
+Return format: EXACTLY 30 LINES.
+Line k must contain ONLY your bid for case k as an integer in [0,200].
+No other text or punctuation. No blank lines.
