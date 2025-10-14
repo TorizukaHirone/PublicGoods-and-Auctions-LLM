@@ -1,63 +1,64 @@
-# PublicGoods-and-Auctions-LLM
+```markdown
 
-Two parallel LLM-based experiments for **COMSCI/ECON 206** at Duke Kunshan University:
 
-1. **Public Goods (PS1)** — 2‑player game with endowment 100 and multiplier 1.5.
-2. **Auctions (PS2)** — winner’s curse test in first‑price common‑value auctions with LLM bidders.
+### 3.2 Reproduce PS1 (Strategic Game)
+- **Normal-form grid & Nash**:
+- `computational_scientist/notebooks/public_goods_nashpy.ipynb`
+- **Extensive-form & SPNE**:
+- `computational_scientist/gte/`
+- **Figures** exported to `visualizations/`.
 
----
 
-## Repository Structure
+### 3.3 Reproduce PS2 (Auctions & Winner’s Curse)
+```bash
+python scripts/collect_and_score.py
+```
+- Outputs: summary tables & histograms (saved under `visualizations/`).
 
-* `economist/` — Theoretical background, references, and supporting materials.
-* `computational_scientist/` — Jupyter notebook implementing Nash equilibrium computation with NashPy, plus GTE screenshots.
-* `behavioral_scientist/` — oTree application (zip), session screenshots, and large language model (LLM) transcripts.
-* `mechanism_design/` — **PS2**: Winner’s Curse with LLM bidders (data, prompts, scoring script, figures, results).
 
----
+### 3.4 Voting & Institutions (Reflection 6)
+- Proposal & notes: `mechanism_design/voting/`
+- Field trip reflection: `docs/FieldTripReflection.md`
 
-## How to Reproduce
-
-### Project A — Public Goods (PS1)
-
-1. **Theory (Economist)**
-   See `economist/README.md` and the references in `economist/refs/`.
-
-2. **Computational Scientist**
-   Open `computational_scientist/notebook.ipynb` in Google Colab or Jupyter.
-   Requirements: Python 3.10+, NashPy ≥ 0.0.38, NumPy, Matplotlib.
-   Run all cells to reproduce payoff matrices, equilibrium computation, and the welfare table.
-
-3. **Behavioral Scientist**
-   Unzip `behavioral_scientist/otree_app.zip`.
-   Run locally with oTree 5.x:
-
-   ```bash
-   otree devserver
-   ```
-
-   Navigate to [http://localhost:8000](http://localhost:8000) to play the public goods game.
-   See screenshots in `behavioral_scientist/screenshots/` for session results.
-   See `behavioral_scientist/llm/` for prompts and transcripts of the LLM sessions.
-
-### Project B — Auctions / Winner’s Curse (PS2)
-
-Go to `mechanism_design/` and follow its README. In short:
-
-1. Use `prompts/` to obtain **30‑line integer** bids for each **model × template × bidder**.
-2. Save outputs to `mechanism_design/results/<Model>_<template>_bidderK.txt` (K∈{1,2,3,4}).
-3. Score and visualize:
-
-   ```bash
-   python mechanism_design/scripts/collect_and_score.py
-   ```
-4. Figures (`profit_by_treatment.png`, `b_minus_V_win_dist.png`) and summary tables will be written to `mechanism_design/results/`.
 
 ---
 
-## Software and Tools
 
-* [NashPy](https://doi.org/10.21105/joss.03778) — equilibria in 2‑player games.
-* [Game Theory Explorer](http://www.gametheoryexplorer.org/) — extensive‑form modeling.
-* [oTree](https://www.otreehub.com/) — behavioral experiments.
-* **PS2 analysis**: Python 3.10+, NumPy, Pandas, Matplotlib (see `mechanism_design/README.md`).
+## 4. Navigation Guide
+- **Economist**: `economist/`
+- **Computational Scientist**: `computational_scientist/`
+- **Behavioral Scientist**: `behavioral_scientist/`
+- **Mechanism Design**: `mechanism_design/`
+- **Docs**: `docs/`
+
+
+---
+
+
+## 5. Roles
+- **Economist**: theoretical modeling, welfare & fairness analysis.
+- **Computational Scientist**: Nash equilibrium computation, GTE/SPNE.
+- **Behavioral Scientist**: oTree deployment, human vs LLM comparative analysis.
+- **Mechanism Designer**: auction design, winner’s curse tests, voting/institution proposal.
+
+
+---
+
+
+## 6. Acknowledgments
+Professor Luyao Zhang (feedback on reconciling Colab/GTE, documenting oTree adaptations, integrating figures/citations). Peer review improved coherence and readability (VCM clarity, GitHub ToC). Tools: NashPy, GTE, oTree.
+
+
+---
+
+
+## 7. Statement of Growth
+From PS1 to PS2 to institutional design, we improved research design, reproducibility, and critical evaluation across theory–computation–behavior. We also practiced transparent coding and FAIR/CARE-aligned data sharing.
+
+
+---
+
+
+## 8. License
+MIT (unless otherwise noted).
+```
