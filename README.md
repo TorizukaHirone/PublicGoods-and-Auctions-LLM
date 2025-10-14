@@ -1,13 +1,13 @@
 # PublicGoods-and-Auctions-LLM
 
-Interdisciplinary study linking **strategic games** (PS1) → **mechanism design & auctions** (PS2) → **voting & institutions** (Reflection 6), aligned with COMSCI/ECON 206 Final Research Proposal.
+Interdisciplinary study linking **strategic games** (PS1) → **mechanism design & auctions** (PS2) → **voting & institutions** (PS3 / Reflection 6), aligned with COMSCI/ECON 206 Final Research Proposal.
 
 > This repository supports the final research proposal submitted to **COMSCI/ECON 206: Computational Microeconomics**, instructed by Prof. Luyao Zhang at Duke Kunshan University in Autumn 2025.
 
 ---
 
 ## 1. Abstract
-We investigate a two-player **Public Goods Game** (E=100, m=1.5) to contrast theoretical predictions with **human** and **LLM** behaviors (PS1). We extend to **mechanism design** with **first-price common-value auctions** to test the **winner’s curse** on AI agents and prompt-based de-biasing (PS2). Finally, we propose a **hybrid voting/institutional design** that balances fairness, efficiency, and legitimacy, inspired by EU refugee allocation and informed by Arrow/Buchanan/Hurwicz-Maskin-Myerson (Reflection 6).
+We investigate a two-player **Public Goods Game** (E=100, m=1.5) to contrast theoretical predictions with **human** and **LLM** behaviors (PS1). We extend to **mechanism design** with **first-price common-value auctions** to test the **winner’s curse** on AI agents and prompt-based de-biasing (PS2). Finally, we propose and simulate a **hybrid voting/institutional design** (PS3) that balances fairness, efficiency, and legitimacy, inspired by EU refugee allocation and informed by Arrow/Buchanan/Hurwicz-Maskin-Myerson.
 
 **SDG contributions**: SDG 16 (Institutions), SDG 11 (Sustainable Cities), SDG 10 (Reduced Inequalities), SDG 9 (Innovation).
 
@@ -18,14 +18,18 @@ We investigate a two-player **Public Goods Game** (E=100, m=1.5) to contrast the
 ├── economist/                # Theory & welfare analysis (PS1)
 ├── computational_scientist/  # NashPy notebooks, GTE assets (PS1)
 ├── behavioral_scientist/     # oTree app, human session data, LLM transcripts (PS1/PS2)
-├── mechanism_design/         # Auctions (winner’s curse) & Voting (Reflection 6)
+├── mechanism_design/         # Auctions (PS2) & Voting (PS3)
 │   ├── auctions/
 │   └── voting/
-├── visualizations/           # Figures exported from notebooks/otree/scripts
+├── visualizations/           # Figures for PS1, PS2, PS3
+│   ├── PS1_theory/
+│   ├── PS1_behavior/
+│   ├── PS2_auctions/
+│   └── PS3_voting/
 └── docs/
-    ├── Report.pdf            # Final Research Proposal (to be added)
-    ├── Poster.pdf            # Symposium poster (to be added)
-    └── FieldTripReflection.md# Field trip & institutional reflection
+    ├── Report.pdf
+    ├── Poster.pdf
+    └── FieldTripReflection.md
 ```
 
 ---
@@ -33,39 +37,26 @@ We investigate a two-player **Public Goods Game** (E=100, m=1.5) to contrast the
 ## 3. Quick Start (Reproducibility)
 
 ### 3.1 Environment
-- Python >= 3.10
-- Install:
 ```bash
 pip install -r requirements.txt
 ```
-Minimal requirements:
-```
-nashpy
-numpy
-scipy
-pandas
-matplotlib
-jupyter
-tqdm
-otree
-```
 
 ### 3.2 Reproduce PS1 (Strategic Game)
-- **Normal-form grid & Nash**:
-  - `computational_scientist/notebooks/public_goods_nashpy.ipynb`
-- **Extensive-form & SPNE**:
-  - `computational_scientist/gte/`
-- **Figures** exported to `visualizations/`.
+- `computational_scientist/notebooks/public_goods_nashpy.ipynb`
+- Figures exported under `visualizations/PS1_theory/`
 
 ### 3.3 Reproduce PS2 (Auctions & Winner’s Curse)
 ```bash
-python scripts/collect_and_score.py
+python mechanism_design/auctions/scripts/collect_and_score.py
 ```
-- Outputs: summary tables & histograms (saved under `visualizations/`).
+- Figures in `visualizations/PS2_auctions/`
 
-### 3.4 Voting & Institutions (Reflection 6)
-- Proposal & notes: `mechanism_design/voting/`
-- Field trip reflection: `docs/FieldTripReflection.md`
+### 3.4 Reproduce PS3 (Voting & Institutions)
+```bash
+python mechanism_design/voting/scripts/sim_hybrid_voting.py --seed 42 --states 6 --agents 300
+```
+- Figures in `visualizations/PS3_voting/`
+- Key outputs: `quota_vs_hosted_*.png`, `rank_hist_*.png`
 
 ---
 
@@ -73,7 +64,14 @@ python scripts/collect_and_score.py
 - **Economist**: `economist/`
 - **Computational Scientist**: `computational_scientist/`
 - **Behavioral Scientist**: `behavioral_scientist/`
-- **Mechanism Design**: `mechanism_design/`
+- **Mechanism Design**:
+  - Auctions: `mechanism_design/auctions/`
+  - Voting & Institutions: `mechanism_design/voting/`
+- **Visualizations**:
+  - PS1 Theory: `visualizations/PS1_theory/`
+  - PS1 Behavior: `visualizations/PS1_behavior/`
+  - PS2 Auctions: `visualizations/PS2_auctions/`
+  - PS3 Voting: `visualizations/PS3_voting/`
 - **Docs**: `docs/`
 
 ---
@@ -87,12 +85,12 @@ python scripts/collect_and_score.py
 ---
 
 ## 6. Acknowledgments
-Professor Luyao Zhang (feedback on reconciling Colab/GTE, documenting oTree adaptations, integrating figures/citations). Peer review improved coherence and readability (VCM clarity, GitHub ToC). Tools: NashPy, GTE, oTree.
+Professor Luyao Zhang (guidance on methodology and integration). Peers (feedback on coherence, repo structure). Tools: NashPy, GTE, oTree.
 
 ---
 
 ## 7. Statement of Growth
-From PS1 to PS2 to institutional design, we improved research design, reproducibility, and critical evaluation across theory–computation–behavior. We also practiced transparent coding and FAIR/CARE-aligned data sharing.
+Progressed from PS1 → PS2 → PS3, gaining skills in research design, reproducibility, and institutional analysis. Improved ability to align **theory, computation, and behavior** with SDG-relevant mechanisms.
 
 ---
 

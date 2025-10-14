@@ -1,0 +1,4 @@
+treatment,unassigned,avg_rank_assigned,fairness_deviation,total_hosted,total_payments
+T0_mandatory,18,,2.8333333333333335,282,0.0
+T1_voluntary_fund,101,,0.0,199,100.0
+T2_hybrid_matching,11,1.4359861591695502,1.1666666666666667,289,17.0
