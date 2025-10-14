@@ -1,7 +1,0 @@
-**/__pycache__/
-.ipynb_checkpoints/
-.env
-*.log
-docs/Report.pdf
-docs/Poster.pdf
-mechanism_design/auctions/results/
