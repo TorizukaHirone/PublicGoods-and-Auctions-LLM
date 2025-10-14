@@ -1,0 +1,8 @@
+nashpy
+numpy
+scipy
+pandas
+matplotlib
+jupyter
+tqdm
+otree
