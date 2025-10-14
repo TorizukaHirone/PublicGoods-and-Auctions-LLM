@@ -98,4 +98,3 @@ From PS1 to PS2 to institutional design, we improved research design, reproducib
 
 ## 8. License
 MIT (unless otherwise noted).
-```
